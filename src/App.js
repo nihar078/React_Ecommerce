@@ -1,12 +1,15 @@
-import React from "react";
+import React, { Fragment } from "react";
+import Header from "./components/Header/Header";
+import Music from "./components/Layout/Music";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
-    <div >
-      <h1>
-        WelCome Ecommerce 
-      </h1>
-    </div>
+   <Fragment>
+    <Header />
+    <Music />
+    <Footer />
+   </Fragment>
   );
 }
 
