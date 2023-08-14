@@ -1,13 +1,22 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 
-import "./CartButton.css"
+import "./CartButton.css";
 
-const CartButton = () => {
+const CartButton = (props) => {
   return (
     <div>
-      <Button variant="outline-info" className="button" style={{color:"white", fontFamily: "serif", fontSize: "18px"}}>Cart</Button>
-      <span variant="outline-info"className="badge-wrap" >0</span>
+      <Button
+        variant="outline-info"
+        className="button"
+        style={{ color: "white", fontFamily: "serif", fontSize: "18px" }}
+        onClick={props.onOpen}
+      >
+        Cart
+      </Button>
+      <span variant="outline-info" className="badge-wrap">
+        0
+      </span>
     </div>
   );
 };

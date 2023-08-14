@@ -2,13 +2,14 @@ import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import CartButton from "./CartButton";
 
-const NavigationBar = () => {
+const NavigationBar = (props) => {
   return (
     <div>
       <Navbar bg="dark" variant="dark" className="p-1">
         <Container>
           <Nav className="m-auto">
             <Nav.Link
+              href="#home"
               className="mx-3 px-2"
               style={{
                 color: "white",
@@ -20,6 +21,7 @@ const NavigationBar = () => {
               HOME
             </Nav.Link>
             <Nav.Link
+              href="#store"
               className="mx-3 px-2"
               style={{
                 color: "white",
@@ -31,6 +33,7 @@ const NavigationBar = () => {
               STORE
             </Nav.Link>
             <Nav.Link
+              href="#about"
               className="mx-3 px-2"
               style={{
                 color: "white",
@@ -43,7 +46,7 @@ const NavigationBar = () => {
             </Nav.Link>
           </Nav>
         </Container>
-        <CartButton />
+        <CartButton onOpen={props.onShow} />
       </Navbar>
     </div>
   );
