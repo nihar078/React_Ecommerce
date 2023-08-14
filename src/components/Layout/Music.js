@@ -1,36 +1,49 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Card, Col, Container, Row, Button } from "react-bootstrap";
 
 import "./Music.css"
+import CartContext from "../../store/cart-context";
 
 const productsArr = [
   {
     id: "Album 1",
     title: "Colors",
     price: 100,
+    quantity: 1,
     imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
   },
   {
     id: "Album 2",
     title: "Black and white Colors",
     price: 50,
+    quantity: 1,
     imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
   },
   {
     id: "Album 3",
     title: "Yellow and Black Colors",
     price: 70,
+    quantity: 1,
     imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%203.png",
   },
   {
     id: "Album 4",
     title: "Blue Color",
     price: 100,
+    quantity: 1,
     imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%204.png",
   },
 ];
 
 const Music = () => {
+  const cartCntx = useContext(CartContext)
+
+  const addItemToCartHandler = (item) =>{
+    // console.log(item)
+    cartCntx.addItem(item)
+    // console.log(cartCntx)
+  }
+
   return (
     <div className="music">
       <h1>Music</h1>
@@ -47,7 +60,7 @@ const Music = () => {
                     </div>
                     <Card.Text className="mt-3">
                       {`$${product.price}`}
-                      <Button variant="info" className="button-wrap">ADD TO CART</Button>
+                      <Button variant="info" className="button-wrap" onClick={() => addItemToCartHandler(product)}>ADD TO CART</Button>
                     </Card.Text>
                   </Card.Body>
                 </Card>

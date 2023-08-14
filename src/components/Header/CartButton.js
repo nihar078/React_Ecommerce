@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button } from "react-bootstrap";
 
 import "./CartButton.css";
+import CartContext from "../../store/cart-context";
 
 const CartButton = (props) => {
+  const cartCntx = useContext(CartContext)
+  let quantity = 0
+
+  cartCntx.items.forEach((item) =>{
+    quantity = quantity + Number(item.quantity)
+  })
+
   return (
     <div>
       <Button
@@ -15,7 +23,7 @@ const CartButton = (props) => {
         Cart
       </Button>
       <span variant="outline-info" className="badge-wrap">
-        0
+        {quantity}
       </span>
     </div>
   );

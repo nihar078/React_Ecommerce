@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import "./CartItem.css";
 
 const CartItem = (props) => {
@@ -16,6 +16,8 @@ const CartItem = (props) => {
           </Col>
           <Col md={4} className="d-flex quantity align-items-center">
             <span>{props.quantity}</span>
+            <Button
+            variant="danger" style={{fontWeight: "bold" }} onClick={props.onRemove}>REMOVE</Button>
           </Col>
         </Row>
       </Container>

@@ -1,12 +1,12 @@
 .modal {
-    display: block ;
+    display: block !important;
     max-width: 400px ;
     position: fixed;
     overflow: hidden;
-    top: 50px ;
+    top: 60px !important;
     right: 0 ;
     margin: 0;
-    left: auto ;
+    left: auto !important;
     background-color: #fff;
     border: 1px solid brown;
     padding: 20px 30px ;
