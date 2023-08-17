@@ -6,6 +6,7 @@ import Cart from "./components/Cart/Cart";
 import CartProvider from "./store/CartProvider";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import About from "./components/About/About";
+import Home from "./components/Home/Home";
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -25,7 +26,7 @@ function App() {
         <Routes>
           <Route path="/about" element={<About />} />
           <Route path="/store" element = {<Music />} />
-
+          <Route path="/home" element = {<Home />} />
         </Routes>
         <Footer />
       </CartProvider>
