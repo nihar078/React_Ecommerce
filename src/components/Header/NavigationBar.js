@@ -1,15 +1,17 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import CartButton from "./CartButton";
+import { NavLink, useLocation } from "react-router-dom";
 
 const NavigationBar = (props) => {
+  const location = useLocation()
   return (
     <div>
       <Navbar bg="dark" variant="dark" className="p-1">
         <Container>
           <Nav className="m-auto">
-            <Nav.Link
-              href="#home"
+            <NavLink
+              to="/home"
               className="mx-3 px-2"
               style={{
                 color: "white",
@@ -19,9 +21,9 @@ const NavigationBar = (props) => {
               }}
             >
               HOME
-            </Nav.Link>
-            <Nav.Link
-              href="#store"
+            </NavLink>
+            <NavLink
+              to="/store"
               className="mx-3 px-2"
               style={{
                 color: "white",
@@ -31,9 +33,9 @@ const NavigationBar = (props) => {
               }}
             >
               STORE
-            </Nav.Link>
-            <Nav.Link
-              href="#about"
+            </NavLink>
+            <NavLink
+              to="/about"
               className="mx-3 px-2"
               style={{
                 color: "white",
@@ -43,10 +45,10 @@ const NavigationBar = (props) => {
               }}
             >
               ABOUT
-            </Nav.Link>
+            </NavLink>
           </Nav>
         </Container>
-        <CartButton onOpen={props.onShow} />
+        {location.pathname === "/store" && <CartButton onOpen={props.onShow} />}
       </Navbar>
     </div>
   );

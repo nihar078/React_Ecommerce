@@ -35,7 +35,7 @@ const productsArr = [
   },
 ];
 
-const Music = () => {
+const Music = (props) => {
   const cartCntx = useContext(CartContext)
 
   const addItemToCartHandler = (item) =>{
@@ -69,7 +69,7 @@ const Music = () => {
           ))}
         </Row>
         <div className="text-center mt-3">
-            <Button variant="secondary" style={{color: "lightblue", fontWeight: "bold"}}>See the cart</Button>
+            <Button variant="secondary" style={{color: "lightblue", fontWeight: "bold"}} onClick={props.onShowCart}>See the cart</Button>
         </div>
       </Container>
     </div>
