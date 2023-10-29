@@ -5,8 +5,8 @@ background-color: rgb(122, 118, 118);
 padding-bottom: 56px;
 }
 .heading h1{
+    color: #fff;
     font-family: 'Noto Serif', serif;
     font-size: 100px;
     font-weight: 700;
-    color: #fff;
 }

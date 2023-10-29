@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Card, Col, Container, Row, Button } from "react-bootstrap";
 
-import "./Music.css"
+import "./Music.css";
 import CartContext from "../../store/cart-context";
 
 const productsArr = [
@@ -36,13 +36,13 @@ const productsArr = [
 ];
 
 const Music = (props) => {
-  const cartCntx = useContext(CartContext)
+  const cartCntx = useContext(CartContext);
 
-  const addItemToCartHandler = (item) =>{
+  const addItemToCartHandler = (item) => {
     // console.log(item)
-    cartCntx.addItem(item)
+    cartCntx.addItem(item);
     // console.log(cartCntx)
-  }
+  };
 
   return (
     <div className="music">
@@ -60,7 +60,13 @@ const Music = (props) => {
                     </div>
                     <Card.Text className="mt-3">
                       {`$${product.price}`}
-                      <Button variant="info" className="button-wrap" onClick={() => addItemToCartHandler(product)}>ADD TO CART</Button>
+                      <Button
+                        variant="info"
+                        className="button-wrap"
+                        onClick={() => addItemToCartHandler(product)}
+                      >
+                        ADD TO CART
+                      </Button>
                     </Card.Text>
                   </Card.Body>
                 </Card>
@@ -69,7 +75,13 @@ const Music = (props) => {
           ))}
         </Row>
         <div className="text-center mt-3">
-            <Button variant="secondary" style={{color: "lightblue", fontWeight: "bold"}} onClick={props.onShowCart}>See the cart</Button>
+          <Button
+            variant="secondary"
+            style={{ color: "lightblue", fontWeight: "bold" }}
+            onClick={props.onShowCart}
+          >
+            See the cart
+          </Button>
         </div>
       </Container>
     </div>

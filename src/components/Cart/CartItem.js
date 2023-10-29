@@ -8,7 +8,7 @@ const CartItem = (props) => {
       <Container>
         <Row className="mb-4">
           <Col md={5} className="d-flex item align-items-center">
-            <img className="cart-img" src={props.imgUrl} alt="cart-items"/>
+            <img className="cart-img" src={props.imgUrl} alt="cart-items" />
             <span>{props.title}</span>
           </Col>
           <Col md={2} className="d-flex price align-items-center">
@@ -17,7 +17,12 @@ const CartItem = (props) => {
           <Col md={4} className="d-flex quantity align-items-center">
             <span>{props.quantity}</span>
             <Button
-            variant="danger" style={{fontWeight: "bold" }} onClick={props.onRemove}>REMOVE</Button>
+              variant="danger"
+              style={{ fontWeight: "bold" }}
+              onClick={props.onRemove}
+            >
+              REMOVE
+            </Button>
           </Col>
         </Row>
       </Container>

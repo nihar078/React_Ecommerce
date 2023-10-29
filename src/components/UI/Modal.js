@@ -17,5 +17,4 @@ const Modal = (props) => {
     </Fragment>
   );
 };
-
-export default Modal
+export default Modal;

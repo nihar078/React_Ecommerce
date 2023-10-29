@@ -46,6 +46,18 @@ const NavigationBar = (props) => {
             >
               ABOUT
             </NavLink>
+            <NavLink
+              to="/contact"
+              className="mx-3 px-2"
+              style={{
+                color: "white",
+                fontFamily: "serif",
+                fontSize: "18px",
+                textDecoration: "none",
+              }}
+            >
+              CONTACT US
+            </NavLink>
           </Nav>
         </Container>
         {location.pathname === "/store" && <CartButton onOpen={props.onShow} />}
