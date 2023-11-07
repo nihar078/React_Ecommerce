@@ -44,7 +44,11 @@ const AuthForm = () => {
       });
       if(response.ok){
         const data = await response.json()
-        authCtx.login(data.idToken)
+        const userEmail = enteredEmail.replace(/[@.]/g, "")
+        authCtx.login({
+            token: data.idToken,
+            email: userEmail
+        })
         navigate("/store")
       }
       else{
